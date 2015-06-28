@@ -1,17 +1,22 @@
 #!/usr/bin/python
 #Copyright [2015] Joerg Stephan <johe.stephan [@] outlook.com>
 
-#Licensed under the Apache License, Version 2.0 (the "License");
-#you may not use this file except in compliance with the License.
-#You may obtain a copy of the License at
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
 #   http://www.apache.org/licenses/LICENSE-2.0
 #
-#Unless required by applicable law or agreed to in writing, software
-#distributed under the License is distributed on an "AS IS" BASIS,
-#WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#See the License for the specific language governing permissions and
-#limitations under the License.
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# This module uses the IBM XForce Exchange API
+# https://exchange.xforce.ibmcloud.com/ and https://xforce-api.mybluemix.net/doc/
+# All rights belong to IBM (ibm.com)
+#
 
 import urllib
 import urllib2
@@ -82,7 +87,7 @@ def get_ip_intel_artillery_strip(ip):
     jdata = send_request(apiurl, ip)
     asmalware = jdata['malware']
     #print json.dumps(jdata, sort_keys=True, indent=3, separators=(',', ': '))
-    return "Country: " + CountryCode + " Score: " + str(iscore) + " Malware: " + str(asmalware)
+    return "Country: " + CountryCode + " RiskScore: " + str(iscore) + " Malware: " + str(asmalware)
 
 
 def get_ip_intel(ip):
